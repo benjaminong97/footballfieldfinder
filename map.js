@@ -16,6 +16,3 @@ function createMap(){
 }
 
 
-let map = createMap()
-
-L.marker([1.4111904827071984, 103.8439297963851]).addTo(map)
