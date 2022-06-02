@@ -4,3 +4,9 @@ async function getData(filePath){
     return(response.data)
 }
 
+const LTA_API_KEY = 'mlBIQv40QcG5tTgF+w8NKg=='
+
+let header = {
+    "AccountKey" : "http://datamall2.mytransport.sg/ltaodataservice/BusStops"
+}
+
