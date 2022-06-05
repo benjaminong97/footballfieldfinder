@@ -1,6 +1,6 @@
 //function to initialise and return the map
 function createMap(){
-    let singapore = [ 1.29,103.85]; // #1 Singapore latlng
+    let singapore = [1.3459183770684942, 103.81127337437334]; // #1 Singapore latlng
     let map = L.map('map').setView(singapore, 13); // #2 Set the center point
 
     // setup the tile layers
