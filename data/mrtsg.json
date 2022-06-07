@@ -67,7 +67,7 @@
    "Y": 29368.625,
    "Latitude": 1.281873788,
    "Longitude": 103.8590733,
-   "COLOR": "OTHERS"
+   "COLOR": "YELLOW"
  },
  {
    "OBJECTID": 115,
@@ -357,7 +357,7 @@
    "Y": 37711.015,
    "Latitude": 1.357314545,
    "Longitude": 103.9883212,
-   "COLOR": "OTHERS"
+   "COLOR": "GREEN"
  },
  {
    "OBJECTID": 70,
@@ -597,7 +597,7 @@
    "Y": 35193.6223,
    "Latitude": 1.334549778,
    "Longitude": 103.9615134,
-   "COLOR": "OTHERS"
+   "COLOR": "GREEN"
  },
  {
    "OBJECTID": 122,
@@ -1017,7 +1017,7 @@
    "Y": 28735.7843,
    "Latitude": 1.276150637,
    "Longitude": 103.8550886,
-   "COLOR": "OTHERS"
+   "COLOR": "YELLOW"
  },
  {
    "OBJECTID": 128,
