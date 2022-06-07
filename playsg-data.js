@@ -8,7 +8,7 @@ async function getPlaySGGroup(){
         let placeCoordinates = place.geometry.coordinates.reverse()
         let playsgIcon = L.icon({
             iconUrl: 'data/icons/activesg.png',
-            iconSize: [80,35]
+            iconSize: [80,50]
         })
         //how to create custom icons
 // var greenIcon = L.icon({

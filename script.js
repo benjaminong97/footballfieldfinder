@@ -16,7 +16,7 @@ async function getArkGroup() {
         marker.bindPopup(`<h2>${placeName}</h2> <p>${placeLocation}<p>`)
         marker.addTo(arkGroup)
     }
-    arkGroup.addTo(map)
+
 
 
 
@@ -41,6 +41,12 @@ async function getMRT() {
     }
     let MRTGroup = L.layerGroup()
     let LRTGroup = L.layerGroup()
+
+
+    //var markers = L.markerClusterGroup();
+// markers.addLayer(L.marker(getRandomLatLng(map)));
+// ... Add more layers ...
+// map.addLayer(markers);
     let response = await axios.get('data/mrtsg.json')
     let MRTData = response.data
     for (station of MRTData) {
@@ -60,6 +66,7 @@ async function getMRT() {
     
             marker.bindPopup(`<h2>${name}, ${number}</h2>`)
             marker.addTo(LRTGroup)
+
         }
         else {
             let MRTicon = L.icon({
@@ -70,6 +77,7 @@ async function getMRT() {
     
             marker.bindPopup(`<h2>${name}, ${number}</h2>`)
             marker.addTo(MRTGroup)
+
         }
         
     }
@@ -86,10 +94,12 @@ async function addLayerControl() {
     let MRTLRTGroupArray = await getMRT()
     let arkGroup = await getArkGroup()
     let playSGGroup = await getPlaySGGroup()
+
+
     //adding layer control
     let baseMaps = {
-        "arkSG": arkGroup,
         "playSG": playSGGroup,
+        "arkSG": arkGroup,
     };
 
 
