@@ -1,3 +1,4 @@
+//this has NOT BEEN FIXED --> ask TA when they are in --> if no way to read in http on https, download the static data separately
 //getting bus stop data from LTA
 window.addEventListener('DOMContentLoaded', async function(){
     let busStopData = await axios.get("http://datamall2.mytransport.sg/ltaodataservice/BusStops", {headers: {

@@ -15,4 +15,6 @@ function createMap(){
     return(map)
 }
 
+// initialise map
+let map = createMap();
 
