@@ -9,6 +9,7 @@ async function addLayerControl() {
     let MRTLRTGroupArray = await getMRT()
     let arkGroup = await getArkGroup()
     let playSGGroup = await getPlaySGGroup()
+    let carparkGroup = await getHDBCarparks()
 
 
     //adding layer control
@@ -21,9 +22,13 @@ async function addLayerControl() {
     let overlayMaps = {
         "MRT": MRTLRTGroupArray[0],
         "LRT": MRTLRTGroupArray[1],
+        "HDB Carparks": carparkGroup,
     };
 
     let layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
     return(layerControl)
+    
+    map.addLayer(clusterGroup)
 }
 let layerControl = addLayerControl()
+
