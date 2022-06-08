@@ -4,8 +4,6 @@
 // carpark availability - https://api.data.gov.sg/v1/transport/carpark-availability
 
 
-
-
 async function addLayerControl() {
     //wait for everything
     let MRTLRTGroupArray = await getMRT()
