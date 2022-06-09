@@ -4,28 +4,28 @@
             "name" : "Funan Pitch",
             "location" : "109 North Bridge Road, #07-37 Funan Mall, Singapore 179097",
             "coordinates" : [1.2914188992895008, 103.85020792444791],
-            "field" : ["futsal", 1],
+            "field" : ["futsal 5-a-Side", 1],
             "openingHours" : "8am to 11pm"
         },
         {
             "name" : "Orchid Country Club Pitch",
             "location" : "1 Orchid Club Rd, Singapore 769162",
             "coordinates" : [1.4111904827071984, 103.8439297963851],
-            "field" : ["futsal", 2],
+            "field" : ["futsal 5-a-Side", 2],
             "openingHours" : "8am to 12am"
         },
         {
             "name" : "Plaza 8 Pitch",
             "location" : "1 Changi Business Park Crescent, Changi Business Park, 486025",
             "coordinates" : [1.333343921386202, 103.96603044240656],
-            "field" : ["futsal", 2],
+            "field" : ["futsal 5-a-Side", 2],
             "openingHours" : "8am to 11pm"
         },
         {
             "name" : "Cuppage Pitch",
             "location" : "51 Cuppage Rd Singapore 229469, Level 10 Roof Garden",
             "coordinates" : [1.303154215717634, 103.84016499360821],
-            "field" : ["futsal", 1],
+            "field" : ["futsal 5-a-Side", 1],
             "openingHours" : "8am to 11pm"
         }
     ]

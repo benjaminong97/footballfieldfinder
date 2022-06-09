@@ -1,0 +1,19 @@
+{
+  "name": "sportvenuefinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bus-stop-data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjaminong97/sportvenuefinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjaminong97/sportvenuefinder/issues"
+  },
+  "homepage": "https://github.com/benjaminong97/sportvenuefinder#readme"
+}

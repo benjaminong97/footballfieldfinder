@@ -1,0 +1,50 @@
+{"pitches": [
+    {
+        "name": "The Cage - Kallang",
+        "address" : "38 Jln Benaan Kapal, Singapore 399635",
+        "pitches" : [{"Futsal 5-a-Side": 6}],
+        "coordinates" : [1.3023034070735247, 103.87982767052829]
+    },
+    {
+        "name" : "The Cage - Turf City",
+        "address" : "Turf Club Rd, Singapore 288001",
+        "pitches" : [{"Futsal 5-a-Side" : 3}, {"Futsal 7-a-Side" : 1}, {"Football 11-a-Side": 4}],
+        "coordinates" : [1.3430077229478652, 103.79484033364012]
+    },
+    {
+        "name" : "The Arena - Woodleigh",
+        "address" : "48 Woodleigh Park, Singapore 357844",
+        "pitches" : [{"Futsal 5-a-Side" : 3}, {"Futsal 7-a-Side" : 2}, {"Football 11-a-Side": 1}],
+        "coordinates" : [1.3425036945225657, 103.86749299723593]
+    },
+    {
+        "name" : "The Arena - Shelton",
+        "address" : "Shelton College, 1 Telok Blangah Rise, Singapore 098888",
+        "pitches" : [{"Futsal 7-a-Side" : 3}],
+        "coordinates" : [1.2742223751026345, 103.82041035518547]
+    },
+    {
+        "name" : "Sky Park Arena - King Albert Park",
+        "address" : "896 Dunearn Rd, #05-03 Link @ 896, Singapore 589472",
+        "pitches" : [{"Futsal 5-a-Side" : 1}, {"Futsal 6-a-Side": 1}],
+        "coordinates" : [1.3385071459341975, 103.78402502155382]
+    },
+    {
+        "name" : "Sky Park Arena - Holland",
+        "address" : "100 Ulu Pandan Rd, Singapore 596471",
+        "pitches" : [{"Futsal 5-a-Side" : 1}, {"Futsal 7-a-Side": 1}],
+        "coordinates" : [1.3243489061999616, 103.77836019630661]
+    },
+    {
+        "name" : "Uber Sports - Punggol",
+        "address" : "6 Tebing Ln, #01-05, Singapore 828835",
+        "pitches" : [{"Futsal 5-a-Side" : 6}],
+        "coordinates" : [1.4023458472985582, 103.91620193683706]
+    },
+    {
+        "name" : "Uber Sports - ORTO",
+        "address" : "81 Lorong Chencharu, #01-13, Orto Park, 769198",
+        "pitches" : [{"Futsal 5-a-Side" : 4}],
+        "coordinates" : [1.4201932147061305, 103.827281346593]
+    }
+]}
