@@ -8,12 +8,13 @@ async function getHDBCarparks(){
         let carparkAddress = carpark.address
         let lat = carpark.latitude
         let long = carpark.longitude
+        let carparkPostalCode = carpark.postalCode
         let carparkIcon = L.icon({
             iconUrl:'data/icons/hdb-carpark.png',
             iconSize:[30,30],
         })
         let marker = L.marker([lat, long], {icon: carparkIcon})
-        marker.bindPopup(`<h2>${carparkAddress}</h2>`)
+        marker.bindPopup(`<h2>${carparkAddress}</h2> <h3>Singapore ${carparkPostalCode}</h3>`)
         marker.addTo(carparkClusterGroup)
     }
     carparkClusterGroup.addTo(carparkLayerGroup)

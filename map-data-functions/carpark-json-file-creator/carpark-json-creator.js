@@ -13,10 +13,12 @@ async function getCarparks() {
         if (response.data.features[0] != undefined) {
             let lat = response.data.features[0].geometry.coordinates[1]
             let long = response.data.features[0].geometry.coordinates[0]
+            let postalCode = response.data.features[0].context[0].text
             let object = {
                 "address": carparkAddress,
                 "latitude": lat,
-                "longitude": long
+                "longitude": long,
+                "postalCode": postalCode,
             }
             carparkArray.push(object)
         }
@@ -24,5 +26,5 @@ async function getCarparks() {
     }
     console.log(carparkArray)
 }
-//getCarparks()
+// getCarparks()
 //DATA HAS ALREADY BEEN STORED IN hdb-carpark.json, DO NOT RUN THIS FUNCTION
