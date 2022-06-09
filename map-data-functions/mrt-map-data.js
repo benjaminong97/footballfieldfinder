@@ -18,8 +18,7 @@ async function getMRT() {
 // markers.addLayer(L.marker(getRandomLatLng(map)));
 // ... Add more layers ...
 // map.addLayer(markers);
-    let response = await axios.get('data/mrtsg.json')
-    let MRTData = response.data
+    let MRTData = await getData('data/mrtsg.json')
     for (station of MRTData) {
         let name = station.STN_NAME
         let lat = station.Latitude

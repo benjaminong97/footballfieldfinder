@@ -1,6 +1,6 @@
 async function getFutsalData(){
-    let futsalData = await axios.get('data/other-futsal-pitches.json')
-    let arrayOfPitches = futsalData.data.pitches
+    let futsalData = await getData('data/other-futsal-pitches.json')
+    let arrayOfPitches = futsalData.pitches
     let theArenaIcon = L.icon({
         iconUrl: 'data/icons/football-icons/thearena.png',
         iconSize: [80,30]
