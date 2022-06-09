@@ -1,23 +1,29 @@
 //this has NOT BEEN FIXED --> ask TA when they are in --> if no way to read in http on https, download the static data separately
 //getting bus stop data from LTA
-// window.addEventListener('DOMContentLoaded', async function(){
-//     let busStopData = await axios.get("http://datamall2.mytransport.sg/ltaodataservice/BusStops", {headers: {
-//         "AccountKey" : 'mlBIQv40QcG5tTgF+w8NKg=='
-//     }})
-//     console.log(busStopData)
-// })
+//unable to resolve API issue --> api hosted on HTTP URL, API does not accept HTTPS, server requires HTTPS
+//downloaded static file (json) of the data instead (bus stops generally not updated too often)
+async function getBusStopData() {
+    let busStopData = await getData('data/bus-stops.json')
+    let busStopClusterGroup = L.markerClusterGroup()
+    let busStopLayerGroup = L.layerGroup()
+    busStopClusterGroup.addTo(busStopLayerGroup)
+    for (busStop of busStopData.value) {
+        let name = busStop.Description
+        let street = busStop.RoadName
+        let stopCode = busStop.BusStopCode
+        let lat = busStop.Latitude
+        let long = busStop.Longitude
+        let busIcon = L.icon({
+            iconUrl : 'data/icons/busstop.png',
+            iconSize: [65,65],
+            iconAnchor:   [20, 20],
+            popupAnchor : [9,0]
+        })
+        let marker = L.marker([lat,long], {icon: busIcon})
+        marker.bindPopup(`<h3>Bus Stop: ${name}</h3> <h4>Street: ${street} <br>Bus Stop Code: ${stopCode}</h4>`)
+        marker.addTo(busStopClusterGroup)
+    }
+    return (busStopLayerGroup)
+}
 
-// async function getData(filepath, object){
-//     let response = await axios.get(filepath, object);
-//     return (response.data)
-// }
-
-
-// const LTA_API_KEY = 'mlBIQv40QcG5tTgF+w8NKg=='
-
-// let busStopPath = "http://datamall2.mytransport.sg/ltaodataservice/BusStops"
-
-// let header = {
-//     "AccountKey" : 'mlBIQv40QcG5tTgF+w8NKg=='
-// }
 

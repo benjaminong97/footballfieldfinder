@@ -15,8 +15,15 @@ async function getArkGroup() {
             iconSize: [50,50]
         })
         let marker = L.marker(placeCoordinates, {icon: arkIcon})
-        marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
-            <p>Details: ${placePitchType[0].toUpperCase()+placePitchType.slice(1)}, ${placePitchNumber} Pitch`)
+        if (placePitchNumber == 1) {
+            marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
+                <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitch`)
+        }
+        else {
+            marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
+                <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitches`)
+        }
+        
         marker.addTo(arkClusterGroup)
     }
     arkClusterGroup.addTo(arkLayerGroup)

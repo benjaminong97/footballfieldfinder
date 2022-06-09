@@ -19,8 +19,10 @@ async function getPlaySGGroup() {
             { icon: playsgIcon })
         let placeName = place.properties.Name
         let placeDescription = place.properties.description
+        let placeFacilities = placeDescription.split('Facilities:')[1]
+        let placePostalCode = place.properties.ADDRESSPOSTALCODE
         let placeAddress = place.properties.ADDRESSSTREETNAME
-        marker.bindPopup(`<h2>${placeName}</h2><p>${placeDescription}</p>`)
+        marker.bindPopup(`<h2>${placeName}</h2><h3>${placeAddress}, Singapore ${placePostalCode}</h3><p>Facilities: ${placeFacilities}</p>`)
         marker.addTo(playsgClusterGroup)
 
     }

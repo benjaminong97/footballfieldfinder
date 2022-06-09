@@ -7,6 +7,7 @@ async function addLayerControl() {
     let playSGGroup = await getPlaySGGroup()
     let carparkGroup = await getHDBCarparks()
     let otherFutsalArray = await getFutsalData()
+    let busStopGroup = await getBusStopData()
 
     //adding layer control
     let baseMaps = {
@@ -29,6 +30,7 @@ async function addLayerControl() {
         "Transport": {
             "MRT": MRTLRTGroupArray[0],
             "LRT": MRTLRTGroupArray[1],
+            "Bus": busStopGroup
         },
         "Parking": {
             "HDB Carparks": carparkGroup,
