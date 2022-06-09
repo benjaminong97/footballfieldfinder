@@ -8,8 +8,10 @@ async function getMRT() {
         'BLUE': 'DT',
         'OTHERS': 'LRT',
     }
-    let MRTGroup = L.layerGroup()
-    let LRTGroup = L.layerGroup()
+    let MRTClusterGroup = L.markerClusterGroup()
+    let LRTClusterGroup = L.markerClusterGroup()
+    let MRTLayerGroup = L.layerGroup()
+    let LRTLayerGroup = L.layerGroup()
 
 
     //var markers = L.markerClusterGroup();
@@ -29,12 +31,12 @@ async function getMRT() {
         if (station.COLOR == "OTHERS"){
             let MRTicon = L.icon({
                 iconUrl: `data/icons/mrt-icons/Tips-icon-${MRTColorLegend[color]}.png`,
-                iconSize: [60, 22]
+                iconSize: [35, 40]
             })
             let marker = L.marker([lat, long], { icon: MRTicon })
     
             marker.bindPopup(`<h2>${name}, ${number}</h2>`)
-            marker.addTo(LRTGroup)
+            marker.addTo(LRTClusterGroup)
 
         }
         else {
@@ -45,13 +47,15 @@ async function getMRT() {
             let marker = L.marker([lat, long], { icon: MRTicon })
     
             marker.bindPopup(`<h2>${name}, ${number}</h2>`)
-            marker.addTo(MRTGroup)
+            marker.addTo(MRTClusterGroup)
 
         }
         
     }
+    MRTClusterGroup.addTo(MRTLayerGroup)
+    LRTClusterGroup.addTo(LRTLayerGroup)
 
-    return ([MRTGroup,LRTGroup])
+    return ([MRTLayerGroup,LRTLayerGroup])
 
 }
 

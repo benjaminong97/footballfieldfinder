@@ -17,5 +17,5 @@ function createMap(){
 
 // initialise map
 let map = createMap();
-let clusterGroup = L.markerClusterGroup().addTo(map)
+
 

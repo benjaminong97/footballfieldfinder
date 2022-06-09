@@ -1,6 +1,7 @@
 //get data from theark.json
 async function getArkGroup() {
-    let arkGroup = L.layerGroup()
+    let arkClusterGroup = L.markerClusterGroup()
+    let arkLayerGroup = L.layerGroup()
     let arkData = await getData('data/theark.json');
     let arkPlaces = arkData.places;
     for (place of arkPlaces) {
@@ -13,14 +14,9 @@ async function getArkGroup() {
         })
         let marker = L.marker(placeCoordinates, {icon: arkIcon})
         marker.bindPopup(`<h2>${placeName}</h2> <p>${placeLocation}<p>`)
-        marker.addTo(arkGroup)
+        marker.addTo(arkClusterGroup)
     }
+    arkClusterGroup.addTo(arkLayerGroup)
 
-
-
-
-    let carparkData = await getData('https://api.data.gov.sg/v1/transport/carpark-availability')
-    console.log(carparkData)
-
-    return (arkGroup)
+    return (arkLayerGroup)
 }
