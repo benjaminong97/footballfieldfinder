@@ -6,7 +6,6 @@ async function getPlaySGGroup() {
 
     let playsgClusterGroup = L.markerClusterGroup()
 
-
     // let  playsgLayerGroup = L.layerGroup()
     for (place of playsgDataArray) {
         let placeCoordinates = place.geometry.coordinates.reverse()

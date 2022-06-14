@@ -9,6 +9,7 @@ async function addLayerControl() {
     let otherFutsalArray = await getFutsalData()
     let busStopGroup = await getBusStopData()
 
+
     //adding layer control
     let baseMaps = {
 
@@ -38,9 +39,22 @@ async function addLayerControl() {
     };
 
     let layerControl = L.control.groupedLayers(baseMaps, groupedOverlays).addTo(map);
+
     return (layerControl)
 
-    map.addLayer(clusterGroup)
 }
 let layerControl = addLayerControl()
 
+// L.Routing.control({
+//     waypoints: [
+//       L.latLng(1.34, 103.824),
+//       L.latLng(1.341, 103.800)
+//     ],
+//     router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw')
+//   }).addTo(map);
+
+
+// var searchLayer = L.layerGroup().addTo(map);
+// //... adding data in searchLayer ...
+// map.addControl( new L.Control.Search({layer: searchLayer}) );
+// //searchLayer is a L.LayerGroup contains searched markers

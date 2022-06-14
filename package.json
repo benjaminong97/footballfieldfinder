@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/benjaminong97/sportvenuefinder/issues"
   },
-  "homepage": "https://github.com/benjaminong97/sportvenuefinder#readme"
+  "homepage": "https://github.com/benjaminong97/sportvenuefinder#readme",
+  "dependencies": {
+    "leaflet-search": "^3.0.2"
+  }
 }
