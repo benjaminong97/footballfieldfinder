@@ -8,12 +8,13 @@ async function getPlaySGGroup() {
 
     // let  playsgLayerGroup = L.layerGroup()
     for (place of playsgDataArray) {
+        //creating the markers
         let placeCoordinates = place.geometry.coordinates.reverse()
         let playsgIcon = L.icon({
             iconUrl: 'data/icons/activesg.png',
             iconSize: [100, 60]
         })
-            
+        
         let marker = L.marker(placeCoordinates,
             { icon: playsgIcon })
         let placeName = place.properties.Name
@@ -21,7 +22,11 @@ async function getPlaySGGroup() {
         let placeFacilities = placeDescription.split('Facilities:')[1]
         let placePostalCode = place.properties.ADDRESSPOSTALCODE
         let placeAddress = place.properties.ADDRESSSTREETNAME
-        marker.bindPopup(`<h2>${placeName}</h2><h3>${placeAddress}, Singapore ${placePostalCode}</h3><p>Facilities: ${placeFacilities}</p>`)
+        let playButton = document.createElement('div')
+        playButton.classList.add('container')
+        playButton.innerHTML = `<h4>${placeName}</h4><h5>${placeAddress}, Singapore ${placePostalCode}</h5>
+            <p>Facilities: ${placeFacilities}</p> <button class='btn btn-primary btn-sm'>Bring me here!</button>`
+        marker.bindPopup()
         marker.addTo(playsgClusterGroup)
 
     }
