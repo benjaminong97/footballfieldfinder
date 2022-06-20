@@ -45,13 +45,12 @@ async function addLayerControl() {
 }
 let layerControl = addLayerControl()
 
-// L.Routing.control({
-//     waypoints: [
-//       L.latLng(1.34, 103.824),
-//       L.latLng(1.341, 103.800)
-//     ],
-//     router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw')
-//   }).addTo(map);
+//testing random marker
+// let testMarkerHTML = document.createElement('div')
+// testMarkerHTML.innerHTML = `<button class='btn btn-primary btn-sm'> hi hi hi</button>`
+// let randomMarker = L.marker([1.34,103.824]).bindPopup(testMarkerHTML)
+// randomMarker.addTo(map)
+
 
 
 // var searchLayer = L.layerGroup().addTo(map);

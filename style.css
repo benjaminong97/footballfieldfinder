@@ -31,3 +31,20 @@
 #all-pages {
     position: relative
 }
+
+#icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px
+
+}
+
+#home-address {
+    background-image: url("data/poster/football-field.jpg");
+}
+
+#instructions-text {
+    color: whitesmoke;
+    background-color: sandybrown;
+    opacity: 0.7
+}

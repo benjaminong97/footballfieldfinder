@@ -10,7 +10,7 @@ document.querySelector('#address-btn').addEventListener('click', async function 
         p.classList.add('hidden')
     }
 
-    // //animate tab
+    // hide landing page
     document.querySelector('#map-tab').classList.add('active')
     document.querySelector('#address-tab').classList.remove('active')
 
@@ -41,3 +41,4 @@ document.querySelector('#address-btn').addEventListener('click', async function 
         marker.addTo(map)
         console.log('hi3')
     }})
+
