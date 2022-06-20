@@ -39,6 +39,5 @@ document.querySelector('#address-btn').addEventListener('click', async function 
         let marker = L.marker([lat, long], { icon: homeIcon })
         homeMarkerCoordinates =[lat, long]
         marker.addTo(map)
-        console.log('hi3')
     }})
 

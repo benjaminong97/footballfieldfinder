@@ -1,54 +1,57 @@
 //get in the stuff from playsg
 async function getPlaySGGroup() {
-    let playsgData = await getData('data/playsg.geojson')
-    let playsgDataArray = playsgData.features
-    console.log(playsgDataArray)
+  //remove controller waypoints
+  controller.setWaypoints([])
 
-    let playsgClusterGroup = L.markerClusterGroup()
+  let playsgData = await getData('data/playsg.geojson')
+  let playsgDataArray = playsgData.features
+  // console.log(playsgDataArray)
 
-    // let  playsgLayerGroup = L.layerGroup()
-    for (place of playsgDataArray) {
-        //creating the markers
-        let placeCoordinates = place.geometry.coordinates.reverse()
-        let playsgIcon = L.icon({
-            iconUrl: 'data/icons/activesg.png',
-            iconSize: [100, 60]
-        })
+  let playsgClusterGroup = L.markerClusterGroup()
+
+  // let  playsgLayerGroup = L.layerGroup()
+  for (place of playsgDataArray) {
+    //creating the markers
+    let placeCoordinates = place.geometry.coordinates.reverse()
+    let playsgIcon = L.icon({
+      iconUrl: 'data/icons/activesg.png',
+      iconSize: [100, 60]
+    })
 
 
-        let placeName = place.properties.Name
-        let placeDescription = place.properties.description
-        let placeFacilities = placeDescription.split('Facilities:')[1]
-        let facilitiesString = ""
+    let placeName = place.properties.Name
+    let placeDescription = place.properties.description
+    let placeFacilities = placeDescription.split('Facilities:')[1]
+    let facilitiesString = ""
 
-        if (typeof (placeFacilities) == 'string') {
-            if (placeFacilities.includes(',')) {
-                let placeFacilitiesArray = placeFacilities.split(',')
-                placeFacilities = placeFacilitiesArray.join(' ')
-            }
+    if (typeof (placeFacilities) == 'string') {
+      if (placeFacilities.includes(',')) {
+        let placeFacilitiesArray = placeFacilities.split(',')
+        placeFacilities = placeFacilitiesArray.join(' ')
+      }
 
-            if (placeFacilities.includes('  ')) {
-                let placeFacilitiesArray = placeFacilities.split('  ')
-                for (facility of placeFacilitiesArray) {
-                    facilitiesString += `<li class='list-group-item'>${facility}</li>`
-                }
-            }
-            facilitiesString = facilitiesString.slice(33)
-            facilitiesString = '<ul class="list-group">' + facilitiesString + '</ul>'
-            console.log(facilitiesString)
+      if (placeFacilities.includes('  ')) {
+        let placeFacilitiesArray = placeFacilities.split('  ')
+        for (facility of placeFacilitiesArray) {
+          facilitiesString += `<li class='list-group-item'>${facility}</li>`
         }
+      }
+      facilitiesString = facilitiesString.slice(33)
+      facilitiesString = '<ul class="list-group">' + facilitiesString + '</ul>'
+      // console.log(facilitiesString)
+    }
 
 
-        // }
-        // else if (placeFacilities.includes('  ')) {
-        //     let placeFacilitiesArray = placeFacilities.split('  ')
-        //     for (facility of placeFacilitiesArray) {
-        //         facilitiesString += `<li>${facility}</li>`
-        //     }
-        // }
+    // }
+    // else if (placeFacilities.includes('  ')) {
+    //     let placeFacilitiesArray = placeFacilities.split('  ')
+    //     for (facility of placeFacilitiesArray) {
+    //         facilitiesString += `<li>${facility}</li>`
+    //     }
+    // }
 
 
-        {/* <div class="accordion" id="accordionExample">
+    {/* <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -62,19 +65,19 @@ async function getPlaySGGroup() {
     </div>
   </div> */}
 
-        let placePostalCode = place.properties.ADDRESSPOSTALCODE
-        let placeAddress = place.properties.ADDRESSSTREETNAME
-        let playHTML = document.createElement('div')
-        // playHTML.classList.add('container')
-        playHTML.innerHTML = `
+    let placePostalCode = place.properties.ADDRESSPOSTALCODE
+    let placeAddress = place.properties.ADDRESSSTREETNAME
+    let playHTML = document.createElement('div')
+    // playHTML.classList.add('container')
+    playHTML.innerHTML = `
             <div class="accordion" id="accordionExample">
             <div class='accordion-item'>
-            <h4 class='accordion-header'>
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"  aria-controls="collapseOne">
+            <h4 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             ${placeName}
             </button>
             </h4>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
             <h5>Address:</h5><h5>${placeAddress}, Singapore ${placePostalCode}</h5>
             <h5 class="text-success">Details and Facilities:</h5> ${facilitiesString} 
@@ -89,38 +92,41 @@ async function getPlaySGGroup() {
             </br>
             `
 
-        let goToPlayButton = document.createElement('div')
-        goToPlayButton.innerHTML = '<button class="btn btn-primary">Bring me here!</button>'
-        goToPlayButton.classList.add('container', 'd-grid', 'gap-2', 'col-6', 'mx-auto')
-        goToPlayButton.addEventListener('click', function () {
-            // L.Routing.control({
-            //     waypoints: [
-            //       L.latLng(1.34, 103.824),
-            //       L.latLng(1.341, 103.800)
-            //     ],
-            //     router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw')
-            //   }).addTo(map);
-            let controller = L.Routing.control({
-                waypoints: [
-                    L.latLng(homeMarkerCoordinates[0], homeMarkerCoordinates[1]),
-                    L.latLng(placeCoordinates[0], placeCoordinates[1])
-                ],
-                router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw')
-            })
-            controller.addTo(map)
-        })
-        playHTML.appendChild(goToPlayButton)
+    let goToPlayButton = document.createElement('div')
+    goToPlayButton.innerHTML = '<button class="btn btn-primary">Bring me here!</button>'
+    goToPlayButton.classList.add('container', 'd-grid', 'gap-2', 'col-6', 'mx-auto')
+    goToPlayButton.addEventListener('click', function () {
+      // L.Routing.control({
+      //     waypoints: [
+      //       L.latLng(1.34, 103.824),
+      //       L.latLng(1.341, 103.800)
+      //     ],
+      //     router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw')
+      //   }).addTo(map);
+      // let controller = L.Routing.control({
+      //     waypoints : [L.Routing.Waypoint[homeMarkerCoordinates[0], homeMarkerCoordinates[1]],
+      //     L.Routing.Waypoint[placeCoordinates[0], placeCoordinates[1]]] ,
+      //     router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw'),
+      //     createMarker: function() { return null; },
+      // })
+      controller.spliceWaypoints(0, 2)
+      controller.setWaypoints([L.latLng(homeMarkerCoordinates[0], homeMarkerCoordinates[1]),
+      L.latLng(placeCoordinates[0], placeCoordinates[1])])
+      controller.addTo(map)
 
-        let marker = L.marker(placeCoordinates,
-            { icon: playsgIcon })
-        marker.bindPopup(playHTML)
-        marker.addTo(playsgClusterGroup)
+    })
+    playHTML.appendChild(goToPlayButton)
+
+    let marker = L.marker(placeCoordinates,
+      { icon: playsgIcon })
+    marker.bindPopup(playHTML)
+    marker.addTo(playsgClusterGroup)
 
 
-    }
-    // playsgSubGroup.addTo(map)
-    let playsgLayerGroup = L.layerGroup()
-    playsgClusterGroup.addTo(playsgLayerGroup)
-    playsgLayerGroup.addTo(map)
-    return (playsgLayerGroup)
+  }
+  // playsgSubGroup.addTo(map)
+  let playsgLayerGroup = L.layerGroup()
+  playsgClusterGroup.addTo(playsgLayerGroup)
+  playsgLayerGroup.addTo(map)
+  return (playsgLayerGroup)
 }

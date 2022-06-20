@@ -25,7 +25,8 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2F6D57">
     <div class="container-fluid">
-      <a class="navbar-brand"><img src="/data/icons/favicon/sports-icon.png" width="30" height="30">SportsVenueFinder</a>
+      <a class="navbar-brand"><img src="/data/icons/favicon/sports-icon.png" width="30"
+          height="30">SportsVenueFinder</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,7 +40,7 @@
             <button class="nav-link" aria-current="page" id="map-tab">Map</button>
           </li>
 
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Dropdown
@@ -55,7 +56,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          </li> -->
 
         </ul>
         <div class="d-flex">
@@ -70,7 +71,7 @@
     <div id="map-container" class="page hidden">
       <div id="map" class="container-fluid"></div>
       <div id="search-container">
-        
+
         <!-- <input type="text" id="query">
             <button type="submit" id="search-btn" class="btn btn-primary">Search</button> -->
       </div>
@@ -99,8 +100,32 @@
         </div>
         <button class="btn btn-success mt-3" type="submit" id="address-btn">Find My Address!</button>
       </div>
-
-      <div id="instructions-text" class="container mt-5">
+      <div class="container mt-3">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item" id="instructions-text">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How to use:
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <ol>
+                  <li>Enter your address or postal code and click on "Find My Address!"</li>
+                  <li>Use the search bar in the map to find the area you wish to play at (you can toggle the available
+                    locations
+                    with the icon below the search bar).</li>
+                  <li>Click on "Bring me here!" once you have found where you wish to play at.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- <div id="instructions-text" class="container mt-5">
         <h6>
           How to use:
         </h6>
@@ -111,18 +136,19 @@
           <li>Click on "Bring me here!" once you have found where you wish to play at.</li>
         </ol>
 
-      </div>
+      </div> -->
       <div id="icon-container" class="container mt-3">
         <img src="data/poster/theark.png" class="img-fluid" style="max-width: 20%; height:auto">
         <img src="data/poster/active-sg-post.jpg" class="img-fluid"
           style="max-width: 40%; height:auto ; border-radius: 15px">
-        
-        
+
+
         <img src="data/poster/skyparkarena.png" class="img-fluid" style="max-width: 20%; height:auto">
-        <img src="data/poster/ubersports-grey.jpg" class="img-fluid" style="max-width: 35%; height:auto; border-radius: 15px">
+        <img src="data/poster/ubersports-grey.jpg" class="img-fluid"
+          style="max-width: 35%; height:auto; border-radius: 15px">
         <img src="data/poster/thearena.jpeg" class="img-fluid" style="max-width: 20%; height:auto; border-radius: 15px">
-        <img src="data/poster/thecage.png" class="img-fluid" style="max-width: 15%; height:auto; border-radius: 15px">
-        
+        <img src="data/poster/thecage.png" class="img-fluid" style="max-width: 20%; height:auto; border-radius: 15px">
+
       </div>
     </div>
 
