@@ -1,7 +1,9 @@
 //function to initialise and return the map
 function createMap(){
     let singapore = [1.3459183770684942, 103.81127337437334]; // #1 Singapore latlng
-    let map = L.map('map').setView(singapore, 13); // #2 Set the center point
+    let map = L.map('map', {
+        maxBounds: L.latLngBounds(L.latLng(1.17582414422676, 103.55028733792145), L.latLng(1.4949727127210968, 104.06796228679582))
+    }).setView(singapore, 13); // #2 Set the center point
 
     // setup the tile layers
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
