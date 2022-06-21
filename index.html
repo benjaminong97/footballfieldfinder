@@ -59,7 +59,7 @@
           </li> -->
 
         </ul>
-        <div class="d-flex">
+        <div class="d-flex search-hidden" id="search-container">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="query">
           <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
         </div>
@@ -70,11 +70,11 @@
   <div class="all-pages">
     <div id="map-container" class="page hidden">
       <div id="map" class="container-fluid"></div>
-      <div id="search-container">
+      <!-- <div id="search-container">
 
-        <!-- <input type="text" id="query">
+         <input type="text" id="query">
             <button type="submit" id="search-btn" class="btn btn-primary">Search</button> -->
-      </div>
+      </div> 
     </div>
     <div id="home-address" class="page show">
       <div class="container mt-3">
@@ -100,31 +100,8 @@
         </div>
         <button class="btn btn-success mt-3" type="submit" id="address-btn">Find My Address!</button>
       </div>
-      <div class="container mt-3">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          <div class="accordion-item" id="instructions-text">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                How to use:
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-                <ol>
-                  <li>Enter your address or postal code and click on "Find My Address!"</li>
-                  <li>Use the search bar in the map to find the area you wish to play at (you can toggle the available
-                    locations
-                    with the icon below the search bar).</li>
-                  <li>Click on "Bring me here!" once you have found where you wish to play at.</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       
+
       <!-- <div id="instructions-text" class="container mt-5">
         <h6>
           How to use:
@@ -149,6 +126,30 @@
         <img src="data/poster/thearena.jpeg" class="img-fluid" style="max-width: 20%; height:auto; border-radius: 15px">
         <img src="data/poster/thecage.png" class="img-fluid" style="max-width: 20%; height:auto; border-radius: 15px">
 
+      </div>
+      <div class="container mt-3">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item" id="instructions-text">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="address-accordion-button">
+                How to use:
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body" id="address-accordion">
+                <ol>
+                  <li>Enter your address or postal code and click on "Find My Address!"</li>
+                  <li>Use the search bar in the map to find the area you wish to play at (you can toggle the available
+                    locations
+                    with the icon below the search bar).</li>
+                  <li>Click on "Bring me here!" once you have found where you wish to play at.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

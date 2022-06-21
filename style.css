@@ -3,14 +3,14 @@
     width: 100%
 }
 
-/* #map-container {
+.relative {
     position: relative;
 } 
 
-#search-container {
+.absolute {
     position: absolute;
     z-index: 314159;
-} */
+} 
 
 
 .page {
@@ -26,6 +26,10 @@
 
 .show {
     transform: translateX(0)
+}
+
+.search-hidden{
+    transform: translateX(-10000%)
 }
 
 #all-pages {
@@ -55,3 +59,23 @@
     align-items: center;
     
 } */
+
+.nav-link{
+    color: rgb(68, 255, 208)
+}
+
+/* .accordion-button {
+    background-color:rgb(138, 203, 181)
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgb(187, 240, 195);
+} */
+
+#address-accordion {
+    background-color: rgb(204, 237, 204);
+} 
+
+#address-accordion-button {
+    background-color: rgb(210, 223, 210);
+}

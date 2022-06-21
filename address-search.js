@@ -18,6 +18,10 @@ document.querySelector('#address-btn').addEventListener('click', async function 
     // show map
     document.querySelector('#map-container').classList.add('show')
 
+    // show search
+    document.querySelector('#search-container').classList.remove('search-hidden')
+    document.querySelector('#search-container').classList.add('show')
+
     let locationQuery = document.querySelector('#floatingInputGrid').value
     //use mapbox api
     let response = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${locationQuery.replace(/ /g, "%20")}.json?country=sg&limit=1&access_token=pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDNzY3Awb20xaHByM2lrY3k3dXkyYzY4In0.WpE8u5nGJfX_qlSsrRBO4w`)

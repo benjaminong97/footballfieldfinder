@@ -14,7 +14,6 @@ document.querySelector('#search-btn').addEventListener('click', async function()
             //     "postalCode": postalCode,
             // }
         map.flyTo([lat, long], 16)
-        console.log('HI')
 
         }
 })

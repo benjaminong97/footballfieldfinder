@@ -12,18 +12,65 @@ async function getArkGroup() {
         placePitchType = place.field[0]
         let arkIcon = L.icon({
             iconUrl: 'data/icons/football-icons/theark.png',
-            iconSize: [50,50]
+            iconSize: [50, 50]
         })
-        let marker = L.marker(placeCoordinates, {icon: arkIcon})
+        let arkHTML = document.createElement('div')
+
+        // differentiate text for 1 pitch or many pitches
         if (placePitchNumber == 1) {
-            marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
-                <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitch`)
+            arkHTML.innerHTML = `
+            <div class="card" style="width: 10rem;">
+            <img src="data/icons/football-icons/theark.png" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">${placeName}</h5>
+                <h6 class= "card-subtitle mb-2">${placeLocation}</h6>
+                <h6 class="card-text">${placePitchType[0].toUpperCase() + placePitchType.slice(1)}: ${placePitchNumber} Pitch</h6>
+                <a href="https://theark.sg/" class="btn btn-warning text-" target="_blank">Booking</a>
+            </div>
+            </div>
+            `
         }
         else {
-            marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
-                <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitches`)
+            arkHTML.innerHTML = `
+            <div class="card" style="width: 10rem;">
+            <img src="data/icons/football-icons/theark.png" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">${placeName}</h5>
+                <h6 class= "card-subtitle mb-2">${placeLocation}</h6>
+                <h6 class="card-text">${placePitchType[0].toUpperCase() + placePitchType.slice(1)}: ${placePitchNumber} Pitches</h6>
+                <a href="https://theark.sg/" class="btn btn-warning text-" target="_blank">Booking</a>
+            </div>
+            </div>
+            `
         }
+        arkHTML.classList.add('container', 'd-grid', 'mx-auto')
         
+        let arkButton = document.createElement('div')
+        arkButton.innerHTML = '<button class="btn btn-primary">Bring me here!</button>'
+        arkButton.classList.add('container', 'd-grid', 'mx-auto', 'mt-3')
+        arkButton.addEventListener('click', function () {
+    
+          controller.spliceWaypoints(0, 2)
+          controller.setWaypoints([L.latLng(homeMarkerCoordinates[0], homeMarkerCoordinates[1]),
+          L.latLng(placeCoordinates[0], placeCoordinates[1])])
+          controller.addTo(map)
+    
+        })
+        console.log(placeCoordinates)
+
+        arkHTML.appendChild(arkButton)
+
+        let marker = L.marker(placeCoordinates, { icon: arkIcon })
+        marker.bindPopup(arkHTML)
+        // if (placePitchNumber == 1) {
+        //     marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
+        //         <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitch`)
+        // }
+        // else {
+        //     marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
+        //         <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitches`)
+        // }
+
         marker.addTo(arkClusterGroup)
     }
     arkClusterGroup.addTo(arkLayerGroup)
