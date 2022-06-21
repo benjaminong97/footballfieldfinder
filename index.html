@@ -76,29 +76,39 @@
             <button type="submit" id="search-btn" class="btn btn-primary">Search</button> -->
       </div> 
     </div>
-    <div id="home-address" class="page show">
+    <div id="home-address" class="page show d-flex justify-content-center">
       <div class="container mt-3">
-        <h4>Welcome to the Sports Venue Finder! Please enter your address or postal code to get started:</h4>
-        <div class="row g-2">
-          <div class="col-md">
-            <div class="form-floating">
-              <input type="text" class="form-control" id="floatingInputGrid"
-                placeholder="eg. Block 446 Hougang Ave 8 or 530446">
-              <label for="floatingInputGrid">Address or Postal Code</label>
+        <h1 id="home-header" class="cover-heading text-center mx-auto my-0"><img src="/data/icons/favicon/sports-icon.png" width="75"
+          height="75">SportsVenueFinder</h1>
+        <!-- <h4 id="home-subheader" class="cover-heading text-center mt-5">Please enter your address or postal code to get started:</h4> -->
+        
+          <div class="row g-2 mt-3" id="home-address-search-container">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputGrid" required
+                  placeholder="eg. Block 446 Hougang Ave 8 or 530446">
+                <div class="invalid-feedback">
+                  Please provide your address.
+                </div>
+                <label for="floatingInputGrid">Home Address or Postal Code</label>
+              </div>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="form-floating">
-              <select class="form-select" id="floatingSelectGrid">
-                <option value="street_address" selected>Street Address</option>
-                <option value="postal_code">Postal Code</option>
-
-              </select>
-              <label for="floatingSelectGrid">Type of Address</label>
+            <div class="col-md">
+              <div class="form-floating">
+                <select class="form-select" id="address-select">
+                  <option value="street_address" selected>Street Address</option>
+                  <option value="postal_code">Postal Code</option>
+  
+                </select>
+                <label for="address-select">Type of Address</label>
+                
+              </div>
             </div>
+            <button class="btn btn-success" type="submit" id="address-btn">Find My Address!</button>
           </div>
-        </div>
-        <button class="btn btn-success mt-3" type="submit" id="address-btn">Find My Address!</button>
+        
+        
+        
       </div>
       
 
@@ -114,7 +124,7 @@
         </ol>
 
       </div> -->
-      <div id="icon-container" class="container mt-3">
+      <!-- <div id="icon-container" class="container mt-3">
         <img src="data/poster/theark.png" class="img-fluid" style="max-width: 20%; height:auto">
         <img src="data/poster/active-sg-post.jpg" class="img-fluid"
           style="max-width: 40%; height:auto ; border-radius: 15px">
@@ -151,7 +161,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 
@@ -179,7 +189,8 @@
 
 
   <script src="map-data-functions/map-function.js"></script>
-  <script src="address-search.js"></script>
+  <script src="pages.js"></script>
+  <script src="map-data-functions/address-search.js"></script>
   <script src="map-data-functions/data-function.js"></script>
   <script src="map-data-functions/carpark-data.js"></script>
   <script src="map-data-functions/bus-stop-data.js"></script>
@@ -189,7 +200,7 @@
   <script src="map-data-functions/mrt-map-data.js"></script>
   <script src="map-data-functions/carpark-json-file-creator/carpark-json-creator.js"></script>
   <script src="search.js"></script>
-  <script src="pages.js"></script>
+  
 
   <script src="script.js"></script>
 </body>

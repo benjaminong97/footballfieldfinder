@@ -69,7 +69,7 @@ async function getPlaySGGroup() {
             `
 
     let goToPlayButton = document.createElement('div')
-    goToPlayButton.innerHTML = '<button class="btn btn-primary">Bring me here!</button>'
+    goToPlayButton.innerHTML = '<button class="btn btn-outline-success"><img style="max-width: 40px" src="data/icons/directions.png">   Take me here!</button>'
     goToPlayButton.classList.add('container', 'd-grid', 'mx-auto')
     goToPlayButton.addEventListener('click', function () {
 

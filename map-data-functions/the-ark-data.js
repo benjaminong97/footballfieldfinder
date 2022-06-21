@@ -46,7 +46,7 @@ async function getArkGroup() {
         arkHTML.classList.add('container', 'd-grid', 'mx-auto')
         
         let arkButton = document.createElement('div')
-        arkButton.innerHTML = '<button class="btn btn-primary">Bring me here!</button>'
+        arkButton.innerHTML = '<button class="btn btn-outline-success"><img style="max-width: 40px" src="data/icons/directions.png">   Take me here!</button>'
         arkButton.classList.add('container', 'd-grid', 'mx-auto', 'mt-3')
         arkButton.addEventListener('click', function () {
     
@@ -62,14 +62,7 @@ async function getArkGroup() {
 
         let marker = L.marker(placeCoordinates, { icon: arkIcon })
         marker.bindPopup(arkHTML)
-        // if (placePitchNumber == 1) {
-        //     marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
-        //         <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitch`)
-        // }
-        // else {
-        //     marker.bindPopup(`<h2>${placeName}</h2> <h3>${placeLocation}</h3> 
-        //         <p>${placePitchType[0].toUpperCase()+placePitchType.slice(1)}: ${placePitchNumber} Pitches`)
-        // }
+
 
         marker.addTo(arkClusterGroup)
     }

@@ -3,18 +3,22 @@
     width: 100%
 }
 
+.body {
+    height: 100vh
+}
+
 .relative {
     position: relative;
-} 
+}
 
 .absolute {
     position: absolute;
     z-index: 314159;
-} 
+}
 
 
 .page {
-    height : 100vh;
+    height: 100vh;
     box-sizing: border-box;
     position: absolute;
     width: 100%
@@ -28,7 +32,7 @@
     transform: translateX(0)
 }
 
-.search-hidden{
+.search-hidden {
     transform: translateX(-10000%)
 }
 
@@ -41,11 +45,12 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 15px
-
 }
 
 #home-address {
     background-image: url("data/poster/football-field.jpg");
+    background-size: cover;
+    background-position: center
 }
 
 /* #instructions-text {
@@ -60,7 +65,7 @@
     
 } */
 
-.nav-link{
+.nav-link {
     color: rgb(68, 255, 208)
 }
 
@@ -74,8 +79,38 @@
 
 #address-accordion {
     background-color: rgb(204, 237, 204);
-} 
+}
 
 #address-accordion-button {
     background-color: rgb(210, 223, 210);
 }
+
+#home-header {
+
+    font-size: xxx-large;
+    background: -webkit-linear-gradient(rgb(255, 255, 255),rgb(14, 117, 49));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+#home-subheader {
+    color:rgb(255, 255, 255);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    
+    font-size: 35px;
+   
+}
+
+@media only screen and (max-width: 576px) {
+    #home-header {
+        font-size: xx-large;
+        background: -webkit-linear-gradient(rgb(255, 255, 255),rgb(14, 117, 49));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+    }
+  }
