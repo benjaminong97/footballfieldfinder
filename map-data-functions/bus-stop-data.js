@@ -20,7 +20,7 @@ async function getBusStopData() {
             popupAnchor : [9,0]
         })
         let marker = L.marker([lat,long], {icon: busIcon})
-        marker.bindPopup(`<h3>Bus Stop: ${name}</h3> <h4>Street: ${street} <br>Bus Stop Code: ${stopCode}</h4>`)
+        marker.bindPopup(`<h5>Bus Stop: ${name}</h5> <h6 class='mt-3 p-2' style='outline: 2px solid navy'>Street: ${street} <br>Bus Stop Code: ${stopCode}</h6>`)
         marker.addTo(busStopClusterGroup)
     }
     return (busStopLayerGroup)

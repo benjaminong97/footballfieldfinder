@@ -1,11 +1,14 @@
 #map {
-    height: 100vh;
+    height: 60vh;
     width: 100%
 }
 
 .body {
-    height: 100vh
+    height: 100vh;
+    box-sizing: border-box
 }
+
+
 
 .relative {
     position: relative;
@@ -18,7 +21,7 @@
 
 
 .page {
-    height: 100vh;
+    height: 95vh;
     box-sizing: border-box;
     position: absolute;
     width: 100%
@@ -104,6 +107,16 @@
    
 }
 
+
+
+#map-widget {
+    /* background-color: rgb(179, 229, 241); */
+    height: 35vh;
+    background-image: url('data/poster/cloudy.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 576px) {
     #home-header {
         font-size: xx-large;
@@ -112,5 +125,17 @@
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: black;
+    }
+
+
+
+    #map {
+        height: 95vh
+    }
+
+    .body {
+        margin: 0; 
+        height: 100%; 
+        overflow: hidden
     }
   }

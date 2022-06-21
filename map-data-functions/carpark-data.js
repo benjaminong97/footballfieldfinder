@@ -14,7 +14,7 @@ async function getHDBCarparks(){
             iconSize:[30,30],
         })
         let marker = L.marker([lat, long], {icon: carparkIcon})
-        marker.bindPopup(`<h2>${carparkAddress}</h2> <h3>Singapore ${carparkPostalCode}</h3>`)
+        marker.bindPopup(`<div class="container d-flex justify-content-center"><img style="max-height:50px" src="data/icons/hdb-carpark.png"></div><h5 class="mt-3">${carparkAddress}</h5> <h6>Singapore ${carparkPostalCode}</h6>`)
         marker.addTo(carparkClusterGroup)
     }
     carparkClusterGroup.addTo(carparkLayerGroup)

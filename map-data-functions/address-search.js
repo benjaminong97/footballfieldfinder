@@ -58,12 +58,14 @@ document.querySelector('#address-btn').addEventListener('click', async function 
             document.querySelector('#search-container').classList.add('show')
 
 
-            //use mapbox api
+            //use mapbox api to get coordinates from the search query
             let response = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${locationQuery.replace(/ /g, "%20")}.json?country=sg&limit=1&access_token=pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDNzY3Awb20xaHByM2lrY3k3dXkyYzY4In0.WpE8u5nGJfX_qlSsrRBO4w`)
+
+            //account for bad searches
             if (response.data.features[0] != undefined) {
                 let lat = response.data.features[0].geometry.coordinates[1]
                 let long = response.data.features[0].geometry.coordinates[0]
-                let postalCode = response.data.features[0].context[0].text
+                let nameString = response.data.features[0].place_name
                 // let object = {
                 //     "address": carparkAddress,
                 //     "latitude": lat,
@@ -78,6 +80,10 @@ document.querySelector('#address-btn').addEventListener('click', async function 
                 homeMarker = L.marker([lat, long], { icon: homeIcon })
                 homeMarkerCoordinates = [lat, long]
                 homeMarker.addTo(map)
+
+                await getWeather(lat, long)
+
+
             }
         }
     }
@@ -136,13 +142,14 @@ document.querySelector('#address-btn').addEventListener('click', async function 
             document.querySelector('#search-container').classList.add('show')
 
 
+
             //use mapbox api
             let response = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${locationQuery.replace(/ /g, "%20")}.json?country=sg&limit=1&access_token=pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDNzY3Awb20xaHByM2lrY3k3dXkyYzY4In0.WpE8u5nGJfX_qlSsrRBO4w`)
             if (response.data.features[0] != undefined) {
                 let lat = response.data.features[0].geometry.coordinates[1]
                 let long = response.data.features[0].geometry.coordinates[0]
                 let postalCode = response.data.features[0].context[0].text
-                
+
                 map.flyTo([lat, long], 16)
                 let homeIcon = L.icon({
                     iconUrl: 'data/icons/home.png',

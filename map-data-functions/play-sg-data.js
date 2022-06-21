@@ -77,6 +77,7 @@ async function getPlaySGGroup() {
       controller.setWaypoints([L.latLng(homeMarkerCoordinates[0], homeMarkerCoordinates[1]),
       L.latLng(placeCoordinates[0], placeCoordinates[1])])
       controller.addTo(map)
+      getWeather(placeCoordinates[0], placeCoordinates[1])
 
     })
     playHTML.appendChild(goToPlayButton)

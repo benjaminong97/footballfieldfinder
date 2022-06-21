@@ -34,7 +34,7 @@ async function getMRT() {
             })
             let marker = L.marker([lat, long], { icon: MRTicon })
     
-            marker.bindPopup(`<h2>${name}, ${number}</h2>`)
+            marker.bindPopup(`<div class="container d-flex justify-content-center"><img style="max-height:50px" src="data/icons/mrt-icons/Tips-icon-${MRTColorLegend[color]}.png"></div><h5 class="mt-3">${name}, ${number}</h5>`)
             marker.addTo(LRTClusterGroup)
 
         }
@@ -45,7 +45,7 @@ async function getMRT() {
             })
             let marker = L.marker([lat, long], { icon: MRTicon })
     
-            marker.bindPopup(`<h2>${name}, ${number}</h2>`)
+            marker.bindPopup(`<div class="container d-flex justify-content-center"><img style="max-height:50px" src="data/icons/mrt-icons/Tips-icon-${MRTColorLegend[color]}.png"></div><h5 class="mt-3">${name}, ${number}</h5>`)
             marker.addTo(MRTClusterGroup)
 
         }
