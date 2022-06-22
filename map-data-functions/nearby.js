@@ -91,7 +91,7 @@ async function getNearby(lat, long) {
     nearbyDiv.id="nearby-div"
     nearbyDiv.innerHTML = `
     <ul class="list-group" >
-        <li class="list-group-item d-flex align-items-center" style= "text-align: center"><h6>Distances to nearby places:</h6></li>
+        <li class="list-group-item" style= "text-align: center"><h6>Distances to nearby places:</h6></li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto d-flex"> <img width="40" src="data/icons/mrtgenlogo.png">
             <div class="ms-2"><div class="fw-bold">${nameMRT}</div>

@@ -23,6 +23,7 @@ let map = createMap();
 
 //initialise routing machine
 let controller = L.Routing.control({
+    position: 'topleft',
     addWaypoints: false,
     router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw'),
     createMarker: function() { return null; },

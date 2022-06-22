@@ -109,18 +109,18 @@
 
 #temp {
     width: 20rem;
-    height: 28vh
+    
 
 }
 
 #rain {
     width: 25rem;
-    height: 28vh
+    
 }
 
 #nearby {
     width: 30rem;
-    height: 28vh
+    
 }
 
 
@@ -129,7 +129,6 @@
     height: 50vh;
     background-image: url('data/poster/field.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
     border-color: black;
 }
 
@@ -143,10 +142,14 @@
         -webkit-text-stroke-color: black;
     }
 
+    #map-widget {
+        height: auto;
+    }
+
 
 
     #map {
-        height: 85vh
+        height: 75vh
     }
 
     }
