@@ -6,7 +6,8 @@
 [https://gracious-hugle-f2aeb7.netlify.app/index.html](https://gracious-hugle-f2aeb7.netlify.app/index.html)
 # Summary
 ### Project One-Liner 
-This is a map application meant for users to easily find sports facilities in their vicinity. It displays information on mainly ActiveSG and football/futsal facilities.
+This is a map application meant for users to easily find sports facilities and closeby points of interest in a general location. It displays information on mainly ActiveSG and football/futsal facilities.
+
 ### Context and Justification
 There is no comprehensive place where Singaporeans can find a consolidated display of sports facilities near them. 
 
@@ -73,72 +74,75 @@ Acceptance Criteria
 Delving into technical aspects which most people rarely touch
 Delving into more exotic topics
 
-### Special considerations:
-Due to the jurisdiction in which the website is created in, there should be no financial advice whatsoever. 
+
+
 ## Content & Features:
 
 ### Webpages
 
-- ### Index Page
-A way to access all 6 webpages from the landing page. 
+- ### Landing Tab
+The web app is a single page application with 2 tabs. The landing page contains an input field for the user to enter their address to begin using the app. Upon entering a valid address and submitting, the user will redirected to the map tab.
 
-- ### History
-A discussion about the history of bitcoin in vertical timeline format, with a nice big price chart of Bitcoin being the anchor. The price chart can toggle between logarithmic, and candle, and also varying timespans. 
+- ### Map Tab
+The map tab contains the functionality of the app. Upon entering the map tab, a house icon will be displayed corresponding with the address entered on the landing tab. 
 
-- ### Security
-This is a Single Page Application (SPA) arranged in slide style, with examples on hashing, digital signatures, wallet generation and blockchain simulation. However, due to lack of time, this section is unable to be completed past digital signatures. 
+**Bottom Widget Section**
+The bottom section of the screen displays useful information of the vicinity such as nearby points of interest (like supermarkets and the nearest carpark) as well as weather information. 
 
-- ### Scarcity
-A discussion about mining and the circulating supply of Bitcoin, with an anchor supply chart at the top, zoomable, and with a reset zoom feature. Tables comparing the difference between Bitcoin and Gold
+**Top Navbar and Control Layer**
+The top of the tab has a search bar where users can search for locations in Singapore (such as Hougang, Serangoon MRT, etc), the map will jump to the location entered by the user. Below the navbar is the control layer toggle, users can toggle markers on the map on and off (ActiveSG facilities are toggled on by default). Users may use the tab to navigate back to the landing tab to enter a new starting address.
 
-- ### Decentralization
-An anchor map that lists all of the active Bitcoin nodes currently active, and discusses why does running nodes contribution to decentralization. The map should be able to cluster nodes based on human geography. 
-- ### Dashboard
-A one-stop dashboard that allows users to view handy data about Bitcoin. Resizable widgets that can be dragged and dropped in any configuration the user wants for their own specific needs. Widgets can also be closed. If the user ever needs to reset the layout, there is a reset button. 
-
+**Map Itself**
+Sport facility markers display key information such as the location, postal code, and facilities offered by the venue. Sport facility markers also contain links which lead to the booking page of the facility as well as a directions button. The directions button creates a route from the user's entered home address to the location as well as updates the bottom widget section to the destination location. The map also contains transportation markers showing MRT, LRT, bus stops, and carparks. Carpark markers also contain the directions feature. 
 
 ## Design
 
 ### Wireframe
 
-Hand Drawn, lost/missing unfortunately
+No wireframe was used.
 
 ### Color Palette
 ![alt text](./images/colors.jpeg)
 [Color Palette Link](https://coolors.co/ff9900-f0f0f0-e0e0e0-a0a0a0-606060-202020)
 
-The choice of color was primarily based on a black and white theme, black background with white fonts, and a sprinkling of Bitcoin default gold color. 
+The choice of color was based on primarily darker shades of green, resembling fields for sports.
 
 ### Font Palette
 
-The following choices of font were made. 
+Bootstrap standard font was used in the website, save for the title at the landing page. 
 
-Header: `font-family: 'Fredoka', sans-serif;`
-
-Sub-Header: `font-family: 'Nunito', sans-serif;`
-
-Body: `font-family: 'Source Code Pro', monospace;`
-
-Chart Font: `font-family: 'Source Sans Pro', sans-serif;`
-
-Attention: `font-family: 'Tourney', cursive;`
 
 ### API Endpoints
-Node Data with Grographical Coordinates: 
+Map Tile Layer/ Routing Machine/ Geocoder: 
 
-https://bitnodes.io/api/v1
+https://api.mapbox.com/
 
-Bitcoin Blockchain Data:
+Geocoder (for widget section):
 
-https://blockchain.info
+https://api.foursquare.com/v3/places/
 
-https://api.blockchain.info
+Weather:
 
-Prices Data:
+https://api.openweathermap.org/data/2.5/
 
-https://bitnodes.io/api/v1
+Bus Stops (API parsed with postman and datapoints added to JSON file):
 
-https://api.coingecko.com/api/v3
+http://datamall2.mytransport.sg/ltaodataservice/BusStops/ 
+
+### JSON Files
+ActiveSG GeoJson: https://data.gov.sg/dataset/sportsg-sport-facilities?resource_id=df7698b8-ec88-4508-a2de-63b4d19cb13c
+
+HDB Carpark Information JSON (CSV file converted to JSON via an online converter, then run through mapbox to obtain coordinates): https://data.gov.sg/dataset/hdb-carpark-information
+
+Bus Stops JSON (API parsed with postman and datapoints added to JSON file): http://datamall2.mytransport.sg/ltaodataservice/BusStops/
+
+MRT Stations JSON (CSV file converted to JSON via an online converter): https://data.world/hxchua/train-stations-in-singapore/workspace/file?filename=mrtsg.csv/
+
+The Ark JSON (JSON file created by me with information from their website and coordinates from Google maps): https://theark.sg/
+
+Other Futsal JSON (JSON file created by me with information from their respective websites and coordinates from Google maps): https://www.thearenasg.com/, https://www.thecage.com.sg/, https://www.skyparkarena.com/, http://www.ubersports.com.sg/
+
+
 
 ### Technologies Used
 
@@ -146,95 +150,87 @@ https://api.coingecko.com/api/v3
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap v5.1
-- Font Awesome
-- Google Fonts
-
-## Used in production
-- Visual Studio Code
-- Git
-- GitHub
-- Netlify
-
-## Used for widgets in dashboard.html and others
+- Bootstrap v5.0
 - Leaflet
-- Leaflet Marker Clustering
-
-Node maps, charts
-- Apex Charts
-
-Used 9 times in dashboard.html
+- Leaflet Market Clustering
+- Leaflet Grouped Overlay
+- Leaflet Routing Machine
 - Axios
 
-Used 17 times in dashboard.html
+## Used in production
+- Gitpod
+- Git
+- GitHub
+
 
 # TEST CASES
 | #  | Description | Steps | Expected|
 | ------------- | ------------- | ------------- | ------------- |
-||In History.html|In History.html|In History.html|
-| 1 | Bitcoin Price Chart must be able to load  | Load Site, wait for chart to appear | Check the graph against https://www.coingecko.com/en/coins/bitcoin to see if it matches (Max) |
-| 2 | Logarithmic Button switches data to logarithmic  | Click logarithmic button | Check against https://www.coingecko.com/en/coins/bitcoin, logarithmic chart  |
-| 3 | Candle button switches chart to candlestick | Click candlestick button   | Check against https://www.coingecko.com/en/coins/bitcoin, candle chart |
-| 4 | Timespan buttons switches to the correct data  | Change timespan, check against https://www.coingecko.com/en/coins/bitcoin, select date | Days selected matches the x-axis of the chart |
-| 5 | While clicking buttons, logarithmic and candle settings are applied | Click on a new timespan  | Check if the same logarithmic and candle settings are still applied   |
-||In Dashboard.html|In Dashboard.html|In Dashboard.html|
-| 1 | All 19 Widgets, from left to right, top to bottom | Wait for it to load  | Check if all widgets are displaying something  |
-| 2 | Widget 1 (Current Block) | Should display latest block  | Check against https://www.blockchain.com/explorer, under Latest Blocks  |
-| 3 | Widget 2 (Last Block) | (1 minute refresh rate)  | Check against https://www.blockchain.com/explorer, make sure the time elapsed is the same  |
-| 4 | Widget 3 (Avg block time) | (1 minute refresh rate)  | Match https://blockchain.info/q/interval in seconds |
-| 5 | Widget 4 (Network Hashrate) | (1 minute refresh rate)  | Match https://api.blockchain.info/stats hash_rate, where we add 18 zeros  |
-| 6 | Widget 5 (Price) | (1 second refresh rate)   | Match market price at https://www.binance.com/en/trade/BTC_USDT  |
-| 7 | Widget 6 (Block List) | (1 minute refresh rate) | Match Latest Blocks at https://www.blockchain.com/explorer?utm_campaign=expnav_explorer  |
-| 8 | Widget 6 (Block List) | Click on any block height number  | Widget 11 should change to the transaction list for that block, verify by checking https://www.blockchain.com/explorer?utm_campaign=expnav_explorer and clicking on the same block  |
-| 9 | Widget 11 (Tx List)  | Click on any of the transactions listed, Widget 12 should update with the transaction details of that transaction  | Check against https://www.blockchain.com/explorer?utm_campaign=expnav_explorer, by going to that block number, and finding the transaction |
-| 11 | Widget 7 (avg transaction per block chart)  | Wait for chart to load  | Chart should match https://www.blockchain.com/charts/n-transactions-per-block |
-| 12 | Widget 8 (Hashrate Distribution) | Wait for chart to load   | Should Match https://www.blockchain.com/charts/pools |
-| 13 | Widget 9 (Daily Network Hashrate) | Wait for chart to load  | Should Match https://www.blockchain.com/charts/hash-rate  |
-| 14 | Widget 10 (Orderbook) | Updates every second  | Should match the orderbook of https://www.binance.com/en/trade/BTC_USDT  |
-| 15 | Widget 13 (Price) | Wait for chart to load   | Should match the 90 day chart at https://www.coingecko.com/en/coins/bitcoin |
-| 16 | Widget 14 (Candlestick)  | Wait for chart to load   | Should match the candlechart at https://www.binance.com/en/trade/BTC_USDT, set graph to 30 mins  |
-| 17 | Widget 15 (Live price)  | Wait for chart to update  | Updated value must match the price at widget 5 |
-| 18 | Widget 16 (Node Map)  | Clustering based on continent, then zoom in, then cluster by countries, then zoom in, then cluster by cities, then zoom in, then cluster by location, then zoom in to see individual nodes  | Check that there are no irregularities  |
-| 19 | Widget 16 (Node Map)    | Each node, when clicked on, should show details about the node  | Check node data against https://bitnodes.io/   |
-| 20 | Widget 13, 17, 18  | Hover mouse on one of their charts | All 3 charts should be synchronized   |
-| 21 | Widget 19 (Exchange Data) | When table loads  | Check against https://www.coingecko.com/en/coins/bitcoin#markets  |
-| 22 | Widget 19 (Exchange Data)  | Click on any of the exchange in the row | A new tab should pop up, leading you to that exchange  |
-|23| All widgets| All widgets are resizable and movable| Check for that
-|24| All widgets| All widgets will have the highest z index when last clicked on| Check for that
-|25| All widgets| Upon resize, all widgets will snap back to original position and size|Check for that
-|26| All widgets| All widgets can be closed by clicking an X on the top right| Check for that
-||In Decentralization.html|In Decentralization.html|In Decentralization.html|
-| 1 | Node Map  | Clustering based on continent, then zoom in, then cluster by countries, then zoom in, then cluster by cities, then zoom in, then cluster by location, then zoom in to see individual nodes  | Check that there are no irregularities  |
-| 2 | Node Map    | Each node, when clicked on, should show details about the node  | Check node data against https://bitnodes.io/ |
+||At Home Tab |At Home Tab|At Home Tab|
+| 1 | Home Address entered must not be shorter than 3 characters | Try finding address with  1, and 2 character string | Tab does not switch to map, error message displayed |
+| 2 | Postal Code entered must be 6 digit number | Try different number of digits, mix of digits and other characters | Tab does not switch to map, error message displayed |
+| 3 | Home Address must be entered | Try finding address with no characters entered  | Tab does not switch to map, error message displayed |
+| 4 | Address must be valid and be found on Mapbox | Try finding address with random string of characters | Tab does not switch to map, error message displayed |
+| 5 | Must not be able to switch to map tab without first entering an address | Try clicking on map tab button | Tab does not switch to map, error message displayed |
+| 6 | Find my address button should read input and bring user to map tab when valid address is entered | Try searching with an address in Singapore | Tab switches to map, home icon pops up, bottom widgets are populated with information |
+| 7 | Type of address selector works | Try finding empty or invalid address | Different error message appears with different type selected | 
+
+||On Map|On Map|On Map|
+| 1 | Map must load  | Load Site, tab to map and wait for map to appear | Map appears |
+| 2 | Map must not be able to pan too far out of Singapore  | Try to pan out of Singapore | Map bounces back within boundaries  |
+| 3 | Map must not be able to zoom too far out | Try to zoom very far out  | Zoom capped at certain level |
+| 4 | Location search must work | Type in different addresses | map should jump to the general location |
+| 5 | Bottom Widgets must work | Check if widgets are populated | widgets are populated |
+| 6 | Group Overlay must work | Check if all groups of markers can be toggled on and off, and on simultaneously | Markers should appear and disappear from map  |
+| 7 | Routing Machine must work | Check if "Take me there!" on ActiveSG, all football markers, and HDB Carpark markers create a route and update bottom widgets | New route replaces old route, bottom widgets are updated  |
+| 8 | Markers must have all information | Check if markers have address, and details, clicking "booking" on markers should take user to booking website | User brought to booking website |
+| 9 | Remove Route button works  | Check if remove route button removes existing route from map | Route removed
+
 
 # Deployment
 Hosted on Netlify free plan, without database. All dependencies are delivered via CDN. 
 To deploy, fork this code, link your Github account with netlify, and make this repo a site. 
 
 # Dependencies
-- Bootstrap v5.1
-- Font Awesome
-- Google Fonts
+- Bootstrap v5.0
 - Leaflet
 - Leaflet Marker Clustering
-- Apex Charts
+- Leaflet Grouped Overlay
+- Leaflet Routing Machine
 - Axios
 
+# Sources
+- MRT General Icon: https://www.businesstraveller.com/business-travel/2018/01/09/changi-airport-mrt-station-experience-disruptions/
+- MRT Colored Icons: https://ourhound.com/transportations-tips-travelling-around-singapore/
+- LRT Icon: https://iconape.com/singapore-lrt-logo-logo-icon-svg-png.html/
+- ActiveSG Icon: https://www.myactivesg.com/
+- theArk Icon: https://theark.sg/
+- theCage Icon: https://www.thecage.com.sg/
+- UberSports Icon: http://www.ubersports.com.sg/
+- SkyParkArena Icon: https://www.skyparkarena.com/
+- Directions Icon: https://www.freeiconspng.com/img/4698/
+- Badge/ Favicon Icon: https://www.freepnglogos.com/images/sport-35492.html/
+- Bus Stop Icon: https://icon-library.com/icon/google-maps-bus-icon-14.html/
+- Bus Icon: https://www.freeiconspng.com/img/12983/
+- Home Icon: https://www.clipartmax.com/middle/m2i8H7G6A0N4m2i8_white-home-5-icon-vector-png-logo-home/
+- Weather Icons: https://www.flaticon.com/free-icons/weather/
+- Landing Tab Background - https://www.pexels.com/photo/multicolored-soccer-ball-on-green-field-47730/
+- Distance Calculator (JS Function) - https://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+
+
+
+
 # CREDITS AND ACKNOWLEDGMENT
-- Visual Studio Code
+- Gitpod
 - Git
 - GitHub
 - Netlify
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap v5.1
-- Font Awesome
-- Google Fonts
+- Bootstrap v5.0
 - Leaflet
 - Leaflet Marker Clustering
-- Apex Charts
+- Leaflet Grouped Overlay
 - Axios
 - Last but not least, Trent Global College and their excellent teacher, Paul.
-- Also my wife.
-- And Family

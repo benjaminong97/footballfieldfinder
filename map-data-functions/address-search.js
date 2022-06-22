@@ -15,7 +15,7 @@ document.querySelector('#address-btn').addEventListener('click', async function 
 
 
         //check if address is valid
-        if (locationQuery == "" || locationQuery.length < 3) {
+        if (locationQuery == "" || locationQuery.length < 3 || (response.data.features.length == 0) ) {
 
             //if error message exists, remove to avoid duplicates
             if (document.querySelector('#alert-div')) {
@@ -24,7 +24,7 @@ document.querySelector('#address-btn').addEventListener('click', async function 
 
             //create error message and display for user
             let alertDiv = document.createElement('div')
-            alertDiv.innerHTML = `Please enter a valid address: An address must have at least 3 characters.`
+            alertDiv.innerHTML = `Please enter a valid address: Address must be in Singapore and have at least 3 characters.`
             alertDiv.id = 'alert-div'
             alertDiv.style = 'color: red; background-color:pink; outline:2px solid red; border-radius: 5px'
             alertDiv.classList.add('mt-2')

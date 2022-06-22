@@ -1,4 +1,4 @@
-// using foursquare to get all carpark coordinates is extremely slow, since carparks don't change too often, creating json file 
+// using api to get all carpark coordinates is extremely slow, since carparks don't change too often, creating json file 
 async function getCarparks() {
     let carparkData = await getData('data/hdb-carpark-information.json')
     let carparkArray = []

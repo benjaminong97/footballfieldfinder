@@ -109,15 +109,15 @@ async function getNearby(lat, long) {
 
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto d-flex"><img width="40" src="data/icons/busstop.png">
-            <div class="ms-2">
+            <div class="ms-2 me-auto d-flex"><img width="45" src="data/icons/busicon.png">
+            <div class="ms-">
             <div class="fw-bold">${nameBusstop}</div>
             ${distanceToBusstop.toFixed(2)}km</div>
             </div>
 
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto d-flex"> <img width="40" src="data/icons/shopping.png">
+            <div class="ms-2 me-auto d-flex"> <img width="40" height:"40" src="data/icons/shopping.png">
             <div class="ms-2">
             <div class="fw-bold">${nameSupermarket}, ${locationSupermarket}, S(${postcodeSupermarket})</div>
             ${distanceToSupermarket.toFixed(2)}km</div>
