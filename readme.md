@@ -155,7 +155,6 @@ Other Futsal JSON (JSON file created by me with information from their respectiv
 | 5 | Must not be able to switch to map tab without first entering an address | Try clicking on map tab button | Tab does not switch to map, error message displayed |
 | 6 | Find my address button should read input and bring user to map tab when valid address is entered | Try searching with an address in Singapore | Tab switches to map, home icon pops up, bottom widgets are populated with information |
 | 7 | Type of address selector works | Try finding empty or invalid address | Different error message appears with different type selected | 
-
 ||On Map|On Map|On Map|
 | 1 | Map must load  | Load Site, tab to map and wait for map to appear | Map appears |
 | 2 | Map must not be able to pan too far out of Singapore  | Try to pan out of Singapore | Map bounces back within boundaries  |
