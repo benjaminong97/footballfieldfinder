@@ -58,26 +58,6 @@ Finding ActiveSG facilities which they may have been unaware of previously.
 **Considerations:**
 Users need to know what facilities each venue offers.
 
-## UI/UX:
-### User Stories
-- As a working (in a non-technical field) adult with little time and no prior knowledge about cryptocurrencies, I want to learn more about them so that I can decide whether to invest in them.
-Acceptance Criteria
-Quick and succinct in knowledge delivery
-Non-technical, gentle introduction of jargon
-
-- As an adult who has heard much negative news about cryptocurrencies but didn’t do any prior read-up, I want to open my mind once again to them so that I understand why some of my friends are so upbeat about cryptocurrencies. 
-Acceptance Criteria
-Dispel negative myths in a transparent manner
-Non-biased delivery of information
-Non pushy narrative
-
-- As an adult who has already bought cryptocurrencies, I think I know plenty about cryptocurrencies. I want to see if there is anything more I can learn so that I can broaden my knowledge
-Acceptance Criteria
-Delving into technical aspects which most people rarely touch
-Delving into more exotic topics
-
-
-
 ## Content & Features:
 
 ### Webpages
@@ -103,13 +83,11 @@ Sport facility markers display key information such as the location, postal code
 
 No wireframe was used.
 
-### Color Palette
-![alt text](./images/colors.jpeg)
-[Color Palette Link](https://coolors.co/ff9900-f0f0f0-e0e0e0-a0a0a0-606060-202020)
+### Colors
 
 The choice of color was based on primarily darker shades of green, resembling fields for sports.
 
-### Font Palette
+### Fonts
 
 Bootstrap standard font was used in the website, save for the title at the landing page. 
 
@@ -146,9 +124,9 @@ Other Futsal JSON (JSON file created by me with information from their respectiv
 
 
 
-### Technologies Used
 
-## Used on the map app
+
+## Technologies used on the map app
 - HTML5
 - CSS3
 - JavaScript
@@ -160,7 +138,7 @@ Other Futsal JSON (JSON file created by me with information from their respectiv
 - Netlify
 - Axios
 
-## Used in production
+## Technologies used in production
 - Gitpod
 - Git
 - GitHub
@@ -187,7 +165,7 @@ Other Futsal JSON (JSON file created by me with information from their respectiv
 | 6 | Group Overlay must work | Check if all groups of markers can be toggled on and off, and on simultaneously | Markers should appear and disappear from map  |
 | 7 | Routing Machine must work | Check if "Take me there!" on ActiveSG, all football markers, and HDB Carpark markers create a route and update bottom widgets | New route replaces old route, bottom widgets are updated  |
 | 8 | Markers must have all information | Check if markers have address, and details, clicking "booking" on markers should take user to booking website | User brought to booking website |
-| 9 | Remove Route button works  | Check if remove route button removes existing route from map | Route removed
+| 9 | Remove Route button works  | Check if remove route button removes existing route from map | Route removed |
 
 
 # Deployment
