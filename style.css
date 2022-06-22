@@ -1,5 +1,5 @@
 #map {
-    height: 60vh;
+    height: 55vh;
     width: 100%
 }
 
@@ -107,14 +107,30 @@
    
 }
 
+#temp {
+    width: 20rem;
+    height: 28vh
+
+}
+
+#rain {
+    width: 25rem;
+    height: 28vh
+}
+
+#nearby {
+    width: 30rem;
+    height: 28vh
+}
 
 
 #map-widget {
     /* background-color: rgb(179, 229, 241); */
-    height: 35vh;
-    background-image: url('data/poster/cloudy.png');
+    height: 50vh;
+    background-image: url('data/poster/field.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    border-color: black;
 }
 
 @media only screen and (max-width: 576px) {
@@ -134,4 +150,4 @@
     }
 
     }
-  }
+  

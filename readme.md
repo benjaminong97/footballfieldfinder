@@ -1,9 +1,11 @@
 # Sports Venue Finder
 ### How it looks:
 <!-- ![alt text](./images/websitemockup.jpeg) -->
+![alt text](data/mockup/laptop.PNG)
+![alt text](data/mockup/smartphone.png)
 
 # URL to live website
-[https://gracious-hugle-f2aeb7.netlify.app/index.html](https://gracious-hugle-f2aeb7.netlify.app/index.html)
+[https://clever-gingersnap-87da92.netlify.app/](https://clever-gingersnap-87da92.netlify.app/)
 # Summary
 ### Project One-Liner 
 This is a map application meant for users to easily find sports facilities and closeby points of interest in a general location. It displays information on mainly ActiveSG and football/futsal facilities.
@@ -146,7 +148,7 @@ Other Futsal JSON (JSON file created by me with information from their respectiv
 
 ### Technologies Used
 
-## Used in all 6 sites in various ways
+## Used on the map app
 - HTML5
 - CSS3
 - JavaScript
@@ -155,6 +157,7 @@ Other Futsal JSON (JSON file created by me with information from their respectiv
 - Leaflet Market Clustering
 - Leaflet Grouped Overlay
 - Leaflet Routing Machine
+- Netlify
 - Axios
 
 ## Used in production

@@ -91,7 +91,7 @@ async function getNearby(lat, long) {
     nearbyDiv.id="nearby-div"
     nearbyDiv.innerHTML = `
     <ul class="list-group" >
-        <li class="list-group-item d-flex"><h5>Distances to nearby places:</h5></li>
+        <li class="list-group-item d-flex align-items-center" style= "text-align: center"><h6>Distances to nearby places:</h6></li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
             <div class="ms-2 me-auto d-flex"> <img width="40" src="data/icons/mrtgenlogo.png">
             <div class="ms-2"><div class="fw-bold">${nameMRT}</div>
@@ -101,7 +101,7 @@ async function getNearby(lat, long) {
    
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto d-flex align-items-center"> <img width="40" height="40" height="auto" src="data/icons/hdb-carpark.png">
+            <div class="ms-2 d-flex align-items-center"> <img width="40" height="40" height="auto" src="data/icons/hdb-carpark.png">
             <div class="ms-2">
             <div class="fw-bold">${nameCarpark}, ${locationCarpark}, S(${postcodeCarpark})</div>
             ${distanceToCarpark.toFixed(2)}km</div>
@@ -109,15 +109,15 @@ async function getNearby(lat, long) {
 
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto d-flex"><img width="45" src="data/icons/busicon.png">
-            <div class="ms-">
+            <div class="ms-2 d-flex"><img width="45" src="data/icons/busicon.png">
+            <div class="ms-2">
             <div class="fw-bold">${nameBusstop}</div>
             ${distanceToBusstop.toFixed(2)}km</div>
             </div>
 
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-start">
-            <div class="ms-2 me-auto d-flex"> <img width="40" height:"40" src="data/icons/shopping.png">
+            <div class="ms-2 d-flex"> <img width="40" height:"40" src="data/icons/shopping.png">
             <div class="ms-2">
             <div class="fw-bold">${nameSupermarket}, ${locationSupermarket}, S(${postcodeSupermarket})</div>
             ${distanceToSupermarket.toFixed(2)}km</div>
