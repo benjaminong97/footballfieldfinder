@@ -5,7 +5,7 @@
 ![alt text](data/mockup/smartphone.png)
 
 # URL to live website
-[https://clever-gingersnap-87da92.netlify.app/](https://clever-gingersnap-87da92.netlify.app/)
+[https://playwhere.netlify.app/](https://playwhere.netlify.app/)
 # Summary
 ### Project One-Liner 
 This is a map application meant for users to easily find sports facilities and closeby points of interest in a general location. It displays information on mainly ActiveSG and football/futsal facilities.
