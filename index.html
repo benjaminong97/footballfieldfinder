@@ -60,8 +60,9 @@
 
         </ul>
         <div class="d-flex search-hidden" id="search-container">
-          <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search" id="query">
-          <button class="btn btn-success" type="submit" id="search-btn">Search</button>
+          <input class="form-control form-control-sm me-2" type="search" placeholder="Location" aria-label="Search" id="query">
+          <button class="btn btn-success me-2" type="submit" id="search-btn">Search</button>
+          <button class="btn btn-secondary me-2" type="submit" id="remove-route">Remove Route</button>
         </div>
       </div>
     </div>
@@ -74,16 +75,20 @@
 
          <input type="text" id="query">
             <button type="submit" id="search-btn" class="btn btn-primary">Search</button> -->
-            <div id="map-widget" class="container-fluid d-flex p-4">
-              <div style="width: 30vw; height:auto" id="rain" class="px-3">
+            <div id="map-widget" class="container-fluid d-flex p-4 flex-wrap justify-content-evenly align-items-evenly">
+              <div style = "width: 35rem; height: auto" id="nearby" class="p-3">
+                
+
+              </div>
+              <div style="width: 20rem; height:auto" id="rain" class="p-3">
                 
               </div>
 
-              <div style="width: 30vw; height: auto" id="temp">
+              <div style="width: 20rem; height: auto" id="temp" class="p-3">
                 
               </div>
 
-              <div ></div>
+              
             </div>
       </div> 
       
@@ -202,6 +207,8 @@
 
   <script src="map-data-functions/map-function.js"></script>
   <script src="map-data-functions/weather.js"></script>
+  <script src="map-data-functions/nearby.js"></script>
+  <script src="map-data-functions/distance-calculator.js"></script>
   
   <script src="map-data-functions/address-search.js"></script>
   <script src="pages.js"></script>
@@ -214,6 +221,7 @@
   <script src="map-data-functions/mrt-map-data.js"></script>
   <script src="map-data-functions/carpark-json-file-creator/carpark-json-creator.js"></script>
   <script src="search.js"></script>
+  <script src="map-data-functions/remove-route.js"></script>
   
 
   <script src="script.js"></script>

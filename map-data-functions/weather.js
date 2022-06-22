@@ -13,9 +13,10 @@ async function getWeather(lat, long) {
     let temp = weather.data.main.temp
     let humidity = weather.data.main.humidity
     let wind = weather.data.wind.speed
-    console.log(rain)
+    
     // rain div
     let rainDiv = document.createElement('div')
+
     rainDiv.classList.add('card', 'd-flex', 'justify-content-center')
     rainDiv.id = 'rain-div'
     rainDiv.setAttribute('style', 'background-color: aliceblue')
@@ -49,18 +50,20 @@ async function getWeather(lat, long) {
         <img src="data/icons/weather-icons/clouds.png" class="card-img-top p-3" style="max-height:100px; max-width: 100px">
         <div class="card-body">
           <h5 class="card-title">Cloudy Weather</h5>
-          <p class="card-text">It's a bit cloudy, do be prepared for rain!</p>
+          <p class="card-text">It's a bit cloudy, thank goodness for the shade!</p>
           <p class='text-muted'>Humidity: ${humidity}%</p>
           <p class= 'text-muted'>Windspeed: ${wind}m/s</p>
         </div>
         `
+    }
+    
 
-        document.querySelector("#rain").appendChild(rainDiv)
+    document.querySelector("#rain").appendChild(rainDiv)
 
-        //temperature div
-        let tempDiv = document.createElement('div')
-        tempDiv.id = 'temp-div'
-        tempDiv.innerHTML = `
+    //temperature div
+    let tempDiv = document.createElement('div')
+    tempDiv.id = 'temp-div'
+    tempDiv.innerHTML = `
         
     <ul class="list-group">
     <li class="list-group-item"  style="background-color:aliceblue; text-align: center"><h6>Temperature</h6></li>
@@ -68,6 +71,5 @@ async function getWeather(lat, long) {
     <li class="list-group-item"  style="background-color:aliceblue"><h6>Actual:</h6><h1>${temp}°C</h1></li>
     </ul>
     `
-        document.querySelector('#temp').appendChild(tempDiv)
-    }
+    document.querySelector('#temp').appendChild(tempDiv)
 }

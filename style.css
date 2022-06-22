@@ -130,12 +130,8 @@
 
 
     #map {
-        height: 95vh
+        height: 85vh
     }
 
-    .body {
-        margin: 0; 
-        height: 100%; 
-        overflow: hidden
     }
   }

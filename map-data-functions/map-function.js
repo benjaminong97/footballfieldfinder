@@ -27,6 +27,6 @@ let controller = L.Routing.control({
     router: L.Routing.mapbox('pk.eyJ1IjoiaGV5aXRzYm9uZyIsImEiOiJjbDQ1OGh3ZGYwMnBrM2RtcHowNzExb2x6In0.nYmo8E72bvcLOppTOiuwpw'),
     createMarker: function() { return null; },
 })
-console.log(controller)
+
 
 

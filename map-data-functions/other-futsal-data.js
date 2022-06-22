@@ -67,6 +67,7 @@ async function getFutsalData() {
             L.latLng(coordinates[0], coordinates[1])])
             controller.addTo(map)
             getWeather(coordinates[0], coordinates[1])
+            getNearby(coordinates[0], coordinates[1])
 
         })
         // marker.bindPopup(`<h2>${name}</h2> <h3>${address}</h3> <p>${pitch_string}</p>`)

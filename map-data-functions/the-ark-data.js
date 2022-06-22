@@ -5,11 +5,11 @@ async function getArkGroup() {
     let arkData = await getData('data/theark.json');
     let arkPlaces = arkData.places;
     for (place of arkPlaces) {
-        placeName = place.name;
-        placeLocation = place.location
-        placeCoordinates = place.coordinates
-        placePitchNumber = place.field[1]
-        placePitchType = place.field[0]
+        let placeName = place.name;
+        let placeLocation = place.location
+        let placeCoordinates = place.coordinates
+        let placePitchNumber = place.field[1]
+        let placePitchType = place.field[0]
         let arkIcon = L.icon({
             iconUrl: 'data/icons/football-icons/theark.png',
             iconSize: [50, 50]
@@ -56,9 +56,10 @@ async function getArkGroup() {
           L.latLng(placeCoordinates[0], placeCoordinates[1])])
           controller.addTo(map)
           getWeather(placeCoordinates[0], placeCoordinates[1])
+          getNearby(placeCoordinates[0], placeCoordinates[1])
             
         })
-        console.log(placeCoordinates)
+        
 
         arkHTML.appendChild(arkButton)
 

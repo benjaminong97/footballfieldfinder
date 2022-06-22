@@ -72,12 +72,12 @@ async function getPlaySGGroup() {
     goToPlayButton.innerHTML = '<button class="btn btn-outline-success"><img style="max-width: 40px" src="data/icons/directions.png">   Take me here!</button>'
     goToPlayButton.classList.add('container', 'd-grid', 'mx-auto')
     goToPlayButton.addEventListener('click', function () {
-
       controller.spliceWaypoints(0, 2)
       controller.setWaypoints([L.latLng(homeMarkerCoordinates[0], homeMarkerCoordinates[1]),
       L.latLng(placeCoordinates[0], placeCoordinates[1])])
       controller.addTo(map)
       getWeather(placeCoordinates[0], placeCoordinates[1])
+      getNearby(placeCoordinates[0], placeCoordinates[1])
 
     })
     playHTML.appendChild(goToPlayButton)
