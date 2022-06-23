@@ -100,7 +100,7 @@ document.querySelector('#address-btn').addEventListener('click', async function 
         locationQuery = locationQuery.replace(/\s/g, '')
 
         //check if postalcode is valid
-        if (locationQuery.length != 6 || !(Number(locationQuery))) {
+        if (locationQuery.length != 6 || !(Number(locationQuery)) || (response.data.features.length == 0)) {
 
             //if error message exists, remove to avoid duplicates
             if (document.querySelector('#alert-div')) {
@@ -164,7 +164,7 @@ document.querySelector('#address-btn').addEventListener('click', async function 
                 homeMarker = L.marker([lat, long], { icon: homeIcon })
                 homeMarkerCoordinates = [lat, long]
                 homeMarker.addTo(map)
-
+                await getNearby (lat, long)
                 await getWeather(lat, long)
             }
         }
